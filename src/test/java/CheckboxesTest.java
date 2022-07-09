@@ -20,15 +20,15 @@ public class CheckboxesTest extends BaseTest {
     public void checkboxesTest() throws InterruptedException {
         WebElement firstCheckbox = driver.findElement(firstCheckBox);
         WebElement secondCheckbox = driver.findElement(secondCheckBox);
-        Assert.assertFalse(Boolean.parseBoolean(firstCheckbox.getAttribute("checked")),
+        Assert.assertFalse(firstCheckbox.isSelected(),
                 "Checking if the first checkbox is unchecked");
         firstCheckbox.click();
-        Assert.assertTrue(Boolean.parseBoolean(firstCheckbox.getAttribute("checked")),
+        Assert.assertTrue(firstCheckbox.isSelected(),
                 "Marked the first checkbox, checked that it is checked");
-        Assert.assertTrue(Boolean.parseBoolean(secondCheckbox.getAttribute("checked")),
+        Assert.assertTrue(secondCheckbox.isSelected(),
                 "Checked that the second checkbox is checked");
         secondCheckbox.click();
-        Assert.assertFalse(Boolean.parseBoolean(secondCheckbox.getAttribute("checked")),
+        Assert.assertFalse(secondCheckbox.isSelected(),
                 "Made uncheck in the second checkbox, checked that it was unchecked");
     }
 }
